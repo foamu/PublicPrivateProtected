@@ -1,0 +1,19 @@
+package Gun;
+
+public class M16 extends Rifle {
+	
+	public M16() {
+		
+		// Setting weight works, as the instance modifier is public making it visible anywhere.
+		this.weight = 8;
+		
+		// Setting muzzleVelocity works, as the instance modifier is protected making it visible in the same class, subclasses & the same package.
+		this.muzzleVelocity = 1200;
+		
+		// Does not work. The ammoType variable modifier is set to Private; It is only visible in the same class (Rifle).
+		//this.ammoType = ".223";
+		
+		// This works. color has no modifier, so by default has package-wide visibility.
+		this.color = "black";
+	}
+}
