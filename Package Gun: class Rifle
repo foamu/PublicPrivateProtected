@@ -1,0 +1,35 @@
+package Gun;
+
+// Every java file must contain a public class of the same name as the file. 
+public class Rifle {
+	
+	// Acceptable practice; It is final and static. This is one of the very few cases where a public variable is acceptable.
+	public final static int LEVEL = 70;
+	
+	// weight is visible anywhere! Bad practice as most class instance variables should be private.
+	public int weight;
+	
+	// muzzleVelocity has class, subclass and same-package accessibility
+	protected int muzzleVelocity;
+	
+	// ammoType is private, therefore same-class visibility only.
+	private String ammoType;
+	
+	// no modifier, therefore color has package wide visibility
+	String color;
+	
+	
+	// All variables are within this class, and can always be accessed from within the class no matter the modifier.
+	public Rifle() {
+		this.weight = 8;
+		this.muzzleVelocity = 1200;
+		this.ammoType = ".223";
+		this.color = "black";
+	}
+	
+}
+
+	// There are no modifiers to classes. 
+class RandomStuff {
+	
+}
