@@ -1,0 +1,28 @@
+package main;
+
+import Gun.M16;
+import Gun.Rifle;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		M16 rifle1 = new M16();
+		
+		//Works, the LEVEL variable is final & static thus visible anywhere. It can also be accessed directly via the class as shown below.
+		System.out.println(Rifle.LEVEL);
+		
+		//Works, the weight variable is public.
+		System.out.println(rifle1.weight);
+		
+		//Does not work; muzzleVelocity is set to protected; Only visible within itself, subclasses & the same package. App is in the package: main.
+		//System.out.println(rifle1.muzzleVelocity);
+		
+		//Does not work; ammoType is a private variable; It is only visible within its own class.
+		//System.out.println(rifle1.ammoType);
+		
+		//Does not work; color has no modifier, therefor is visible package-wide, however App is contained in a different package than Rifle.
+		//System.out.println(rifle1.color);
+	}
+
+}
