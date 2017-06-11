@@ -1,0 +1,22 @@
+package main;
+
+import Gun.Rifle;
+
+public class AK47 extends Rifle {
+	
+	public AK47() {
+	
+			// Setting weight works, as the instance modifier is public making it visible anywhere. In this case AK47 is in a different package but can still access weight.
+			// It is bad practice to have public modifiers on instanced variables.
+			this.weight = 8;
+			
+			// Setting muzzleVelocity works. Despite AK47 being in a different package, it happens to be a subclass of Rifle, therefore protected grants it access.
+			this.muzzleVelocity = 1200;
+			
+			// Does not work. ammoType is in a different package and uses the private modifier. 
+			//this.ammoType = ".223";
+			
+			// This does not work. color has no modifier, so by default has package-wide visibility. In this case the variable is in a different package so is not visible.
+			//this.color = "black";
+	}
+}
